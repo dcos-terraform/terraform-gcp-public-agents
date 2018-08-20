@@ -1,5 +1,6 @@
 provider "google" {
   project = "${var.project_id}"
+  region      = "${var.region}"
 }
 
 module "dcos-tested-oses" {
@@ -36,4 +37,5 @@ module "dcos-pubagt-instances" {
   disk_size                = "${var.disk_size}"
   tags                     = "${var.tags}"
   project_id               = "${var.project_id}"
+  region      = "${var.region}"
 }
