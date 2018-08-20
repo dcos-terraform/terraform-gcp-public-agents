@@ -1,8 +1,11 @@
+# project id
+variable "project_id" {}
+
 # Number of Instance
 variable "num_public_agents" {}
 
 # Cluster Name
-variable "cluster_name" {}
+variable "name_prefix" {}
 
 # Instance Type
 variable "machine_type" {}
@@ -42,9 +45,9 @@ variable "tags" {
   default = []
 }
 
-# Format the hostname inputs are index+1, region, cluster_name
+# Format the hostname inputs are index+1, region, name_prefix
 variable "hostname_format" {
-  default = "%[3]s-pubagts%[1]d-%[2]s"
+  default = "pubagts-%[1]d-%[2]s"
 }
 
 # The operating system to use. Instead of using your own AMI you could use a provided OS.
