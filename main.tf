@@ -1,7 +1,4 @@
-provider "google" {
-  project = "${var.project_id}"
-  region      = "${var.region}"
-}
+provider "google" {}
 
 module "dcos-tested-oses" {
   source  = "dcos-terraform/gcp-tested-oses/template"
@@ -23,7 +20,7 @@ module "dcos-pubagt-instances" {
     google = "google"
   }
 
-  name_prefix             = "${var.name_prefix}"
+  name_prefix              = "${var.name_prefix}"
   hostname_format          = "${var.hostname_format}"
   num_instances            = "${var.num_public_agents}"
   image                    = "${coalesce(var.image, module.dcos-tested-oses.gcp_image_name)}"
@@ -36,6 +33,4 @@ module "dcos-pubagt-instances" {
   disk_type                = "${var.disk_type}"
   disk_size                = "${var.disk_size}"
   tags                     = "${var.tags}"
-  project_id               = "${var.project_id}"
-  region      = "${var.region}"
 }

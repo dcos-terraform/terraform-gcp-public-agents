@@ -62,3 +62,18 @@ output "private_ips" {
 output "public_ips" {
   value = ["${module.dcos-pubagt-instances.public_ips}"]
 }
+
+# Tested DCOS OSes Name
+output "dcos_instance_os" {
+  value = "${var.dcos_instance_os}"
+}
+
+# Public Node Self Link
+output "instances_self_link" {
+  value = ["${module.dcos-pubagt-instances.instances_self_link}"]
+}
+
+# Public Node Target Pool Self link
+output "target_pool" {
+  value = ["${module.dcos-pubagt-instances.target_pool}"]
+}
