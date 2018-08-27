@@ -6,9 +6,8 @@ Creates DC/OS Public Agent intances
 
 ```hcl
 module "pubagts" {
-  source = "../terraform-gcp-instances"
-
-  # version = "0.0.0"
+  source = "dcos-terraform/instances/gcp"
+  version = "~> 0.0"
 
   num_instance                   = "${var.instances_count}"
   disk_size                      = "${var.gcp_instances_disk_size}"

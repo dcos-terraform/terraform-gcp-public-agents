@@ -1,9 +1,8 @@
 provider "google" {}
 
 module "dcos-pubagt-instances" {
-  #  source  = "dcos-terraform/instance/gcp"  #  version = "~> 0.0"
-
-  source = "../terraform-gcp-instance"
+  source  = "dcos-terraform/instance/gcp"
+  version = "~> 0.0"
 
   providers = {
     google = "google"
