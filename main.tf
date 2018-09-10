@@ -20,7 +20,6 @@ module "pubagt-frontend-compute-firewall" {
   dcos_role           = "public-agent"
 }
 
-
 module "dcos-pubagt-instances" {
   source  = "dcos-terraform/instance/gcp"
   version = "~> 0.0"
