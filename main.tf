@@ -6,8 +6,8 @@ data "google_compute_subnetwork" "a" {
   #  region  = "${var.region}"
 }
 
-module "pubagt-frontend-compute-firewall" {
-  source  = "dcos-terraform/compute-firewall/gcp"
+module "pubagt-frontend-compute-forwarding-rule" {
+  source  = "dcos-terraform/compute-forwarding-rule/gcp"
   version = "~> 0.0"
 
   providers = {
