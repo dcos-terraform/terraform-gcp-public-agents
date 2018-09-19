@@ -1,25 +1,5 @@
 provider "google" {}
 
-data "google_compute_subnetwork" "a" {
-  name = "${var.public_agent_subnetwork_name}"
-
-  #  region  = "${var.region}"
-}
-
-module "pubagt-frontend-compute-forwarding-rule" {
-  source  = "dcos-terraform/compute-forwarding-rule/gcp"
-  version = "~> 0.0"
-
-  providers = {
-    google = "google"
-  }
-
-  name_prefix         = "${var.name_prefix}"
-  network             = "${data.google_compute_subnetwork.a.network}"
-  instances_self_link = "${module.dcos-pubagt-instances.instances_self_link}"
-  dcos_role           = "public-agent"
-}
-
 module "dcos-pubagt-instances" {
   source  = "dcos-terraform/instance/gcp"
   version = "~> 0.0"
