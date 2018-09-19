@@ -1,6 +1,6 @@
 provider "google" {}
 
-module "dcos-pubagt-instances" {
+module "dcos-public-agent-instances" {
   source  = "dcos-terraform/instance/gcp"
   version = "~> 0.0"
 
