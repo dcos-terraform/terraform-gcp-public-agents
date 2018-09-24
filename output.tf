@@ -68,6 +68,11 @@ output "dcos_instance_os" {
   value = "${var.dcos_instance_os}"
 }
 
+# Preemptible Scheduling (bool)
+output "scheduling_preemptible" {
+  value = "${var.scheduling_preemptible}"
+}
+
 # Public Node Self Link
 output "instances_self_link" {
   value = ["${module.dcos-public-agent-instances.instances_self_link}"]
