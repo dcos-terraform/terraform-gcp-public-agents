@@ -1,3 +1,4 @@
+[![Build Status](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-gcp-public-agents/job/master/badge/icon)](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-gcp-public-agents/job/master/)
 # DC/OS Instances
 
 Creates DC/OS Public Agent intances
@@ -24,38 +25,47 @@ module "pubagts" {
 }
 ```
 
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| cluster_name | Cluster Name | string | - | yes |
-| customer_image | Source image to boot from | string | - | yes |
-| customer_userdata_rendered | Customer Provided Userdata | string | - | yes |
-| disk_size | Disk Size in GB | string | - | yes |
-| disk_type | Disk Type to Leverage | string | - | yes |
-| instance_subnetwork_name | Instance Subnetwork Name | string | - | yes |
-| machine_type | Instance Type | string | - | yes |
-| num_instances | Number of Instance | string | - | yes |
-| public_ssh_key | SSH Public Key | string | - | yes |
-| region | Region | string | - | yes |
-| ssh_user | SSH User | string | - | yes |
-| zone_list | Element by zone list | string | - | yes |
+| dcos_instance_os | Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `centos_7.4` | no |
+| dcos_version | Specifies which DC/OS version instruction to use. Options: 1.9.0, 1.8.8, etc. See dcos_download_path or dcos_version tree for a full list. | string | - | yes |
+| disk_size | disk size | string | - | yes |
+| disk_type | Disk Type to Leverage. The GCE disk type. Can be either 'pd-ssd', 'local-ssd', or 'pd-standard'. (optional) | string | - | yes |
+| hostname_format | Format the hostname inputs are index+1, region, cluster_name | string | `%[2]s-pubagts-%[1]d` | no |
+| image | image | string | - | yes |
+| machine_type | machine type | string | - | yes |
+| name_prefix | Cluster Name | string | - | yes |
+| num_public_agents | Specify the amount of public agents. These agents will host marathon-lb and edgelb | string | - | yes |
+| public_agent_subnetwork_name | public agent subnetwork name | string | - | yes |
+| public_ssh_key | public ssh key | string | - | yes |
+| scheduling_preemptible | scheduling preemptible | string | `false` | no |
+| ssh_user | ssh user | string | - | yes |
+| tags | Add custom tags to all resources | list | `<list>` | no |
+| user_data | User data to be used on these instances (cloud-init) | string | `` | no |
+| zone_list | zone list | list | `<list>` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| cluster_name | Cluster Name |
-| customer_image | Source image to boot from |
-| customer_userdata_rendered | Customer Provided Userdata |
+| dcos_instance_os | Tested DCOS OSes Name |
 | disk_size | Disk Size in GB |
 | disk_type | Disk Type to Leverage |
-| instance_public_ip_addresses | Public IP Addresses |
-| instance_public_ip_addresses | Public IP Addresses |
-| instance_subnetwork_name | Instance Subnetwork Name |
+| image | Source image to boot from |
+| instances_self_link | Public Node Self Link |
 | machine_type | Instance Type |
-| num_instances | Number of Instance |
+| name_prefix | Cluster Name |
+| num_public_agents | Number of Instance |
+| prereq_id | Returns the ID of the prereq script (if images are not used) |
+| private_ips | Private IP Addresses |
+| public_agent_subnetwork_name | Instance Subnetwork Name |
+| public_ips | Public IP Addresses |
 | public_ssh_key | SSH Public Key |
-| region | Region |
+| scheduling_preemptible | Preemptible Scheduling (bool) |
 | ssh_user | SSH User |
+| user_data | Customer Provided Userdata |
 | zone_list | Element by zone list |
+
