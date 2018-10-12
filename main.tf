@@ -37,7 +37,7 @@ module "dcos-public-agent-instances" {
     google = "google"
   }
 
-  name_prefix              = "${var.name_prefix}"
+  cluster_name             = "${var.cluster_name}"
   hostname_format          = "${var.hostname_format}"
   num_instances            = "${var.num_public_agents}"
   image                    = "${var.image}"
