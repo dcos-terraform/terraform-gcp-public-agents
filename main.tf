@@ -29,6 +29,10 @@
 
 provider "google" {}
 
+locals {
+  networktag = "${var.cluster_name}-public-agents"
+}
+
 module "dcos-public-agent-instances" {
   source  = "dcos-terraform/instance/gcp"
   version = "~> 0.0"
@@ -49,7 +53,7 @@ module "dcos-public-agent-instances" {
   zone_list                = "${var.zone_list}"
   disk_type                = "${var.disk_type}"
   disk_size                = "${var.disk_size}"
-  tags                     = "${var.tags}"
+  tags                     = "${concat(list(local.networktag), var.tags)}"
   dcos_instance_os         = "${var.dcos_instance_os}"
   dcos_version             = "${var.dcos_version}"
   scheduling_preemptible   = "${var.scheduling_preemptible}"

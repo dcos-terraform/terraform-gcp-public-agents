@@ -37,6 +37,7 @@ module "pubagts" {
 | disk_type | Disk Type to Leverage. The GCE disk type. Can be either 'pd-ssd', 'local-ssd', or 'pd-standard'. (optional) | string | - | yes |
 | hostname_format | Format the hostname inputs are index+1, region, cluster_name | string | `%[2]s-pubagts-%[1]d` | no |
 | image | image | string | - | yes |
+| labels | Add custom labels to all resources | map | `<map>` | no |
 | machine_type | machine type | string | - | yes |
 | num_public_agents | Specify the amount of public agents. These agents will host marathon-lb and edgelb | string | - | yes |
 | public_agent_subnetwork_name | public agent subnetwork name | string | - | yes |
