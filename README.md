@@ -35,7 +35,7 @@ module "pubagts" {
 | dcos_version | Specifies which DC/OS version instruction to use. Options: 1.9.0, 1.8.8, etc. See dcos_download_path or dcos_version tree for a full list. | string | - | yes |
 | disk_size | disk size | string | - | yes |
 | disk_type | Disk Type to Leverage. The GCE disk type. Can be either 'pd-ssd', 'local-ssd', or 'pd-standard'. (optional) | string | - | yes |
-| hostname_format | Format the hostname inputs are index+1, region, cluster_name | string | `%[2]s-pubagts-%[1]d` | no |
+| hostname_format | Format the hostname inputs are index+1, region, cluster_name | string | `%[3]s-publicagent%[1]d-%[2]s` | no |
 | image | image | string | - | yes |
 | labels | Add custom labels to all resources | map | `<map>` | no |
 | machine_type | machine type | string | - | yes |
