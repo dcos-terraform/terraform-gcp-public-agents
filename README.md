@@ -34,7 +34,7 @@ module "pubagts" {
 | dcos_instance_os | Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `centos_7.4` | no |
 | dcos_version | Specifies which DC/OS version instruction to use. Options: 1.9.0, 1.8.8, etc. See dcos_download_path or dcos_version tree for a full list. | string | - | yes |
 | disk_size | Disk Size in GB | string | - | yes |
-| disk_type | Disk Type to Leverage. The GCE disk type. Can be either 'pd-ssd', 'local-ssd', or 'pd-standard'. (optional) | string | - | yes |
+| disk_type | Disk Type to Leverage The GCE disk type. Can be either 'pd-ssd', 'local-ssd', or 'pd-standard'. (optional) | string | - | yes |
 | hostname_format | Format the hostname inputs are index+1, region, cluster_name | string | `%[3]s-publicagent%[1]d-%[2]s` | no |
 | image | Source image to boot from | string | - | yes |
 | labels | Add custom labels to all resources | map | `<map>` | no |
@@ -54,7 +54,7 @@ module "pubagts" {
 |------|-------------|
 | dcos_instance_os | Operating system to use. Instead of using your own AMI you could use a provided OS. |
 | disk_size | Disk Size in GB |
-| disk_type | Disk Type to Leverage. The GCE disk type. Can be either 'pd-ssd', 'local-ssd', or 'pd-standard'. (optional) |
+| disk_type | Disk Type to Leverage The GCE disk type. Can be either 'pd-ssd', 'local-ssd', or 'pd-standard'. (optional) |
 | image | Source image to boot from |
 | instances_self_link | List of instance self links |
 | machine_type | Instance Type |
