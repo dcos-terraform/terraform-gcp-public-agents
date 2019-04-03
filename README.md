@@ -60,7 +60,7 @@ module "pubagts" {
 | machine_type | Instance Type |
 | name_prefix | Cluster Name |
 | num_public_agents | Specify the amount of public agents. These agents will host marathon-lb and edgelb |
-| prereq_id | Prereq id used for dependency |
+| prereq-id | Prereq id used for dependency |
 | private_ips | List of private ip addresses created by this module |
 | public_agent_subnetwork_name | Instance Subnetwork Name |
 | public_ips | List of public ip addresses created by this module |
