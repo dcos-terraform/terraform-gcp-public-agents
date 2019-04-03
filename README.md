@@ -43,7 +43,7 @@ module "pubagts" {
 | public_agent_subnetwork_name | Instance Subnetwork Name | string | - | yes |
 | public_ssh_key | SSH Public Key | string | - | yes |
 | scheduling_preemptible | Deploy instance with preemptible scheduling. (bool) | string | `false` | no |
-| ssh_user | SSH User | string | - | yes |
+| ssh_user | OS / SSH User | string | - | yes |
 | tags | Add custom tags to all resources | list | `<list>` | no |
 | user_data | User data to be used on these instances (cloud-init) | string | `` | no |
 | zone_list | Element by zone list | list | `<list>` | no |
@@ -66,6 +66,6 @@ module "pubagts" {
 | public_ips | List of public ip addresses created by this module |
 | public_ssh_key | SSH Public Key |
 | scheduling_preemptible | Deploy instance with preemptible scheduling. (bool) |
-| ssh_user | SSH User |
+| os_user | OS / SSH User |
 | user_data | User data to be used on these instances (cloud-init) |
 | zone_list | Element by zone list |
