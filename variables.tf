@@ -67,7 +67,7 @@ variable "hostname_format" {
 
 variable "dcos_instance_os" {
   description = "Operating system to use. Instead of using your own AMI you could use a provided OS."
-  default     = "centos_7.4"
+  default     = "centos_7.5"
 }
 
 variable "labels" {
