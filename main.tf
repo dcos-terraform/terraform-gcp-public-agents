@@ -9,7 +9,7 @@
  *```hcl
  * module "pubagts" {
  *   source = "dcos-terraform/instances/gcp"
- *   version = "~> 0.1.0"
+ *   version = "~> 0.2.0"
  *
  *   num_instance                   = "${var.instances_count}"
  *   disk_size                      = "${var.gcp_instances_disk_size}"
@@ -35,7 +35,7 @@ locals {
 
 module "dcos-public-agent-instances" {
   source  = "dcos-terraform/instance/gcp"
-  version = "~> 0.1.0"
+  version = "~> 0.2.0"
 
   providers = {
     google = "google"
