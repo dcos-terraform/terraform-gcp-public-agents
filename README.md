@@ -31,7 +31,7 @@ module "pubagts" {
 |------|-------------|:----:|:-----:|:-----:|
 | cluster\_name | Name of the DC/OS cluster | string | n/a | yes |
 | dcos\_instance\_os | Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `"centos_7.5"` | no |
-| dcos\_version | Specifies which DC/OS version instruction to use. Options: 1.9.0, 1.8.8, etc. See dcos_download_path or dcos_version tree for a full list. | string | n/a | yes |
+| dcos\_version | Specifies which DC/OS version instruction to use. Options: 1.12.3, 1.11.10, etc. See dcos_download_path or dcos_version tree for a full list. | string | n/a | yes |
 | disk\_size | Disk Size in GB | string | n/a | yes |
 | disk\_type | Disk Type to Leverage The GCE disk type. Can be either 'pd-ssd', 'local-ssd', or 'pd-standard'. (optional) | string | n/a | yes |
 | hostname\_format | Format the hostname inputs are index+1, region, cluster_name | string | `"%[3]s-publicagent%[1]d-%[2]s"` | no |
@@ -57,10 +57,10 @@ module "pubagts" {
 | image | Source image to boot from |
 | instances\_self\_link | List of instance self links |
 | machine\_type | Instance Type |
-| name\_prefix | Cluster Name |
+| name\_prefix | Name Prefix |
 | num\_public\_agents | Specify the amount of public agents. These agents will host marathon-lb and edgelb |
-| os\_user | OS / SSH User |
-| prereq-id | Prereq id used for dependency |
+| os\_user | The OS user to be used |
+| prereq-id | Returns the ID of the prereq script (if user_data or ami are not used) |
 | private\_ips | List of private ip addresses created by this module |
 | public\_agent\_subnetwork\_name | Instance Subnetwork Name |
 | public\_ips | List of public ip addresses created by this module |
