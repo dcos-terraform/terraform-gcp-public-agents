@@ -4,7 +4,7 @@ output "num_public_agents" {
 }
 
 output "name_prefix" {
-  description = "Cluster Name"
+  description = "Name Prefix"
   value       = "${var.cluster_name}"
 }
 
