@@ -42,6 +42,7 @@ module "dcos-public-agent-instances" {
   }
 
   cluster_name             = "${var.cluster_name}"
+  name_prefix              = "${var.name_prefix}"
   hostname_format          = "${var.hostname_format}"
   num_instances            = "${var.num_public_agents}"
   image                    = "${var.image}"
