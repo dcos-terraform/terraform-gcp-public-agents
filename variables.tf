@@ -10,10 +10,6 @@ variable "machine_type" {
   description = "Instance Type"
 }
 
-variable "dcos_version" {
-  description = "Specifies which DC/OS version instruction to use. Options: 1.12.3, 1.11.10, etc. See dcos_download_path or dcos_version tree for a full list."
-}
-
 variable "zone_list" {
   description = "Element by zone list"
   type        = "list"

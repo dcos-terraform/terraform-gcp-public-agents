@@ -56,7 +56,6 @@ module "dcos-public-agent-instances" {
   disk_size                = "${var.disk_size}"
   tags                     = "${concat(list(local.networktag), var.tags)}"
   dcos_instance_os         = "${var.dcos_instance_os}"
-  dcos_version             = "${var.dcos_version}"
   scheduling_preemptible   = "${var.scheduling_preemptible}"
 
   labels = "${var.labels}"
