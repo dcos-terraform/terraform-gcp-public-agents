@@ -69,7 +69,7 @@ output "dcos_instance_os" {
 }
 
 output "scheduling_preemptible" {
-  description = "Deploy instance with preemptible scheduling. (bool)"
+  description = "Deploy instance with preemptible scheduling"
   value       = "${var.scheduling_preemptible}"
 }
 
