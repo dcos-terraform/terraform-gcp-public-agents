@@ -38,25 +38,25 @@ module "dcos-public-agent-instances" {
   version = "~> 0.2.0"
 
   providers = {
-    google = "google"
+    google = google
   }
 
-  cluster_name             = "${var.cluster_name}"
-  name_prefix              = "${var.name_prefix}"
-  hostname_format          = "${var.hostname_format}"
-  num_instances            = "${var.num_public_agents}"
-  image                    = "${var.image}"
-  user_data                = "${var.user_data}"
-  machine_type             = "${var.machine_type}"
-  instance_subnetwork_name = "${var.public_agent_subnetwork_name}"
-  ssh_user                 = "${var.ssh_user}"
-  public_ssh_key           = "${var.public_ssh_key}"
-  zone_list                = "${var.zone_list}"
-  disk_type                = "${var.disk_type}"
-  disk_size                = "${var.disk_size}"
-  tags                     = "${concat(list(local.networktag), var.tags)}"
-  dcos_instance_os         = "${var.dcos_instance_os}"
-  scheduling_preemptible   = "${var.scheduling_preemptible}"
+  cluster_name             = var.cluster_name
+  name_prefix              = var.name_prefix
+  hostname_format          = var.hostname_format
+  num_instances            = var.num_public_agents
+  image                    = var.image
+  user_data                = var.user_data
+  machine_type             = var.machine_type
+  instance_subnetwork_name = var.public_agent_subnetwork_name
+  ssh_user                 = var.ssh_user
+  public_ssh_key           = var.public_ssh_key
+  zone_list                = var.zone_list
+  disk_type                = var.disk_type
+  disk_size                = var.disk_size
+  tags                     = concat([local.networktag], var.tags)
+  dcos_instance_os         = var.dcos_instance_os
+  scheduling_preemptible   = var.scheduling_preemptible
 
-  labels = "${var.labels}"
+  labels = var.labels
 }
